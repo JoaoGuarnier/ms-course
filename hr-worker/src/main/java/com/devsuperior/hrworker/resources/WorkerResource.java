@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.hrworker.entities.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRespository;
 
+import jdk.jfr.Threshold;
+
 
 
 @RestController
@@ -37,6 +39,13 @@ public class WorkerResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id) {	
+		
+//		try {
+//			Thread.sleep(3000l);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		logger.info("PORT = " + env.getProperty("local.server.port"));
 		
